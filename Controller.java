@@ -55,7 +55,9 @@ public class Controller {
 
   public static void writeFile(Contact c) throws IOException {
     try (FileWriter w = new FileWriter(c.getFamilia() + "txt", true)) {
-      w.write(c.getInfo());
+      w.write(c.getInfo() + "\n");
+    } catch (Exception e) {
+      System.out.println("Проблема с файлом");
     }
   }
 }
